@@ -1,0 +1,14 @@
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\bin\Debug\SoftwareConstruction_Lab1.exe.config
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\bin\Debug\SoftwareConstruction_Lab1.exe
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\bin\Debug\SoftwareConstruction_Lab1.pdb
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\bin\Debug\Interop.ShockwaveFlashObjects.dll
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\SoftwareConstruction_Lab1.csprojResolveAssemblyReference.cache
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\Interop.ShockwaveFlashObjects.dll
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\SoftwareConstruction_Lab1.csproj.ResolveComReference.cache
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\SoftwareConstruction_Lab1.Properties.Resources.resources
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\SoftwareConstruction_Lab1.csproj.GenerateResource.Cache
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\SoftwareConstruction_Lab1.exe
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\SoftwareConstruction_Lab1.pdb
+c:\users\nashm\documents\visual studio 2013\Projects\SoftwareConstruction_Lab1\obj\Debug\SoftwareConstruction_Lab1.Form1.resources
