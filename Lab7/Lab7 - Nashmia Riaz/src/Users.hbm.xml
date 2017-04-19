@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Users" table="employee">
+        <meta attribute="class-description">
+            This class contains the ROUNDS of authentication.
+        </meta>
+
+        <id name="usersid" type="int" column="usersid">
+            <generator class="native"/>
+        </id>
+        <property name="userid" column="userid" type="string"/>
+        <property name="scheme" column="scheme" type="string"/>
+        <property name="totaltime" column="totaltime" type="float"/>
+        <property name="totalstate" column="totalstate" type="string"/>
+        <property name="t1time" column="t1time" type="float"/>
+        <property name="t1state" column="t1state" type="string"/>
+        <property name="t2time" column="t2time" type="float"/>
+        <property name="t2state" column="t2state" type="string"/>
+        <property name="t3time" column="t3time" type="float"/>
+        <property name="t3state" column="t3state" type="string"/>
+        <property name="t4time" column="t4time" type="float"/>
+        <property name="t4state" column="t4state" type="string"/>
+        <property name="t5time" column="t5time" type="float"/>
+        <property name="t5state" column="t5state" type="string"/>
+        <property name="t6time" column="t6time" type="float"/>
+        <property name="t6state" column="t6state" type="string"/>
+        <property name="t7time" column="t7time" type="float"/>
+        <property name="t7state" column="t7state" type="string"/>
+    </class>
+</hibernate-mapping>
