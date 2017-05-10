@@ -4,10 +4,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
-import pk.edu.nust.seecs.gradebook.dao.CloDao;
-import pk.edu.nust.seecs.gradebook.entity.Clo;
-import pk.edu.nust.seecs.gradebook.BOs.CloBO;
+import pk.edu.nust.seecs.gradebook.BOs.*;
+import pk.edu.nust.seecs.gradebook.dao.*;
+import pk.edu.nust.seecs.gradebook.entity.*;
 
 /**
  * My main App. 
@@ -15,61 +17,62 @@ import pk.edu.nust.seecs.gradebook.BOs.CloBO;
  This executes everything.
  */
 
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
 public class App {
 
-    public static void main(String[] args) {
-        boolean exit = false;
-        int option;
+    private CloBO clobo;
+    private ContentBO contentbo;
+    private CourseBO coursebo;
+    private GradeBO gradebo;
+    private StudentBO studentbo;
+    private TeacherBO teacherbo;
 
-        System.out.print("Enter one of the following: \n"+
-                "1. Add\n"+
-                "2. Delete\n" +
-                "3. Update\n");
+    public void main(String[] args) {
+        java.util.Date date=new java.util.Date();
+        ApplicationContext context=new ClassPathXmlApplicationContext(new String[]{"application-context.xml"});
+        BeanFactory factory=context;
+        clobo = (CloBO)factory.getBean("clobo");
+        contentbo = (ContentBO)factory.getBean("contentbo");
+        coursebo = (CourseBO)factory.getBean("coursebo");
+        teacherbo = (TeacherBO)factory.getBean("teacherbo");
+        studentbo = (StudentBO)factory.getBean("studentbo");
+        gradebo = (GradeBO)factory.getBean("gradebo");
 
-        Scanner input = new Scanner(System.in);
-        option = input.nextInt();
+        Clo clo = new Clo(5,"a","b","c","d");
+        clobo.addClo(clo);
 
-        System.out.print("Enter one of the following: \n"+
-                "1. Clo\n"+
-                "2. Content\n" +
-                "3. Course\n" +
-                "4. Grade\n" +
-                "5. Student\n" +
-                "6. Teacher\n");
-        int option2 = input.nextInt();
+        Teacher teacher = new Teacher(3, "Fahad Satti");
+        teacherbo.addTeacher(teacher);
 
-        switch(option){
-            case 1:
-                switch(option2){
-                    case 1:
-                        CloBO clobo = new CloBO();
-                        Clo cl = new Clo("1","hello","plo","bt");
-                        clobo.addClo(cl);
-                        break;
+        Student student = new Student(1, "Nashmia");
+        studentbo.addStudent(student);
 
-                    case 2:
-                        break;
+        Course course = new Course("Software Construction", date, date, 3, teacher);
+        coursebo.addCourse(course);
 
-                    case 3:
-                        break;
+        Content content = new Content("xcd","dfsd",date,date,course);
+        contentbo.addClo(content);
 
-                    case 4:
-                        break;
-
-                    case 5:
-                        break;
-
-                    case 6:
-                        break;
-                }
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-        }
+        Grade grade = new Grade ("SC", 50, course);
+        gradebo.addClo(grade);
+        Teacher d= new Teacher();
+        d=   myBean.getTeacher(3);
+        myBean.addCourse(1,"Construct",date,date,3, d);
+        Course f= new Course();
+        f=myBean.getCourse(1);
+        myBean.addContent(1, "xcd", "dfyu", date, date,f);
+        myBean.getTeachers();
+        myBean.getAllClo();
+        Content c=myBean.getContent(1);
+        myBean.addGrade(1, "SC", 45,c);
+        myBean.getAllGrade();
+        myBean.getGrade(1);
     }
 
 }

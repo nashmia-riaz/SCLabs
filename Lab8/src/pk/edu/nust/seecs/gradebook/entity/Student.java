@@ -44,10 +44,13 @@ public class Student implements java.io.Serializable {
     */
     public Student() {
     }
+
+
     /*
     * Class constructor that creates this student object by their name.
     */
-    public Student(String name) {
+    public Student(int x, String name) {
+        this.studentId=x;
         this.name = name;
     }
 

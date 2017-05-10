@@ -11,15 +11,15 @@ public class StudentBO {
     public StudentBO(){
         studentdao = new StudentDao();
     }
-    public void addClo(Student c){
+    public void addStudent(Student c){
         studentdao.addStudent(c);
     }
 
-    public void updateClo(Student c){
+    public void updateStudent(Student c){
         studentdao.updateStudent(c);
     }
 
-    public void deleteClo(int id){
+    public void deleteStudent(int id){
         studentdao.deleteStudent(id);
     }
 }

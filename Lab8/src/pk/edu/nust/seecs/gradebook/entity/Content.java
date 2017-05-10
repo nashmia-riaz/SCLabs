@@ -95,6 +95,14 @@ public class Content implements java.io.Serializable {
     public Content() {
     }
 
+    public Content(String t, String d, Date a, Date b, Course c){
+        this.title = t;
+        this.description = d;
+        this.starttime = a;
+        this.endtime = b;
+        this.course = c;
+    }
+
     public String getTitle() {
         return title;
     }

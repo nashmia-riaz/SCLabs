@@ -12,15 +12,15 @@ public class CourseBO {
     public CourseBO(){
         courseDAO = new CourseDao();
     }
-    public void addClo(Course c){
+    public void addCourse(Course c){
         courseDAO.addCourse(c);
     }
 
-    public void updateClo(Course c){
+    public void updateCourse(Course c){
         courseDAO.updateCourse(c);
     }
 
-    public void deleteClo(int id){
+    public void deleteCourse(int id){
         courseDAO.deleteCourse(id);
     }
 }

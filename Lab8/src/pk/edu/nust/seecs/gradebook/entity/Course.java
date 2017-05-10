@@ -80,11 +80,12 @@ public class Course implements java.io.Serializable {
     /*
     * Class constructor that builds this object by taking in defined attributes
     */
-    public Course(String classtitle, Date starttime, Date endtime, int creditHours) {
+    public Course(String classtitle, Date starttime, Date endtime, int creditHours, Teacher t) {
         this.classtitle = classtitle;
         this.startsOn = starttime;
         this.endsOn = endtime;
         this.creditHours = creditHours;
+        this.teacher = t;
     }
     /*
     * This method will return the course id of this course.
@@ -135,12 +136,12 @@ public class Course implements java.io.Serializable {
         this.creditHours = creditHours;
     }
 
-    public Set getContents() {
-        return contents;
+    public int getCourseID() {
+        return courseid;
     }
 
-    public void setContents(Set contents) {
-        this.contents = contents;
+    public void setCourseID(int courseID) {
+        this.courseid = courseID;
     }
 
     @Override

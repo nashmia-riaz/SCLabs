@@ -42,8 +42,8 @@ public class Teacher implements java.io.Serializable {
     /*
     * Class constructor that uses the name of the teacher to build this objext.
     */
-    public Teacher(String name) {
-        this.name = name;
+    public Teacher(int x, String name) {
+        this.teacherId = x; this.name = name;
     }
     /*
     * This method will return the id of this teacher.
@@ -53,6 +53,7 @@ public class Teacher implements java.io.Serializable {
     public Integer getTeacherId() {
         return teacherId;
     }
+    public void setTeacherID(int id){this.teacherId = id;}
 
     public String getName() {
         return name;

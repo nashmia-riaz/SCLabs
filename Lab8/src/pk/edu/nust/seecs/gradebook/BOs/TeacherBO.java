@@ -11,15 +11,15 @@ public class TeacherBO {
     public TeacherBO(){
         teacherdao = new TeacherDao();
     }
-    public void addClo(Teacher c){
+    public void addTeacher(Teacher c){
         teacherdao.addTeacher(c);
     }
 
-    public void updateClo(Teacher c){
+    public void updateTeacher(Teacher c){
         teacherdao.updateTeacher(c);
     }
 
-    public void deleteClo(int id){
+    public void deleteTeacher(int id){
         teacherdao.deleteTeacher(id);
     }
 }

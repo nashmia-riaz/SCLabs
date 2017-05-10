@@ -45,6 +45,14 @@ public class Clo implements java.io.Serializable {
     */
     public Clo() {
     }
+
+    public Clo(int x, String n, String d, String p, String b){
+        this.cloId = x;
+        this.name = n;
+        this.description = d;
+        this.plo = p;
+        this.btLevel = b;
+    }
     /*
     * Class constructor that creates this object by passing a string name.
     */
