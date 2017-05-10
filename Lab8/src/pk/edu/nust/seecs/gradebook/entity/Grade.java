@@ -45,7 +45,11 @@ public class Grade implements java.io.Serializable {
     */
     public Grade() {
     }
-    
+    public Grade(String n, int s, Content c){
+        this.name = n;
+        this.score = s;
+        this.contentItem =c;
+    }
     public String getName() {
         return name;
     }
