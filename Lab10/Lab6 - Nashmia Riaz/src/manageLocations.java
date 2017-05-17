@@ -13,11 +13,21 @@ import java.util.List;
  */
 public class manageLocations {
     private CouchDbClient dbClient;
+    private List<areaLocation> list;
 
-    private static SessionFactory factory;
 
     manageLocations(){
         dbClient = new CouchDbClient("coordinates", true, "http", "127.0.0.1", 5984, "nash","1234");
+        System.out.println("retrieving database...");
+        DesignDocument designDoc;
+        designDoc = dbClient.design().getFromDesk("example");
+        Response response;
+        response = dbClient.design().synchronizeWithDb(designDoc);
+//        list = dbClient.view("example/by_all")
+//
+//                .includeDocs(true)
+//                .query(areaLocation.class);
+
     }
 
     public int addEntry7(int id, String co, String re, String ci, String pc, float lat, float lon){
@@ -36,19 +46,21 @@ public class manageLocations {
 
     /* Method to  find a location */
     public Float[] findLocation(String a){
-        DesignDocument designDoc;
-        designDoc = dbClient.design().getFromDesk("example");
-        Response response;
-        response = dbClient.design().synchronizeWithDb(designDoc);
-        List<areaLocation> list = dbClient.view("example/by_all")
-                .limit(1000)
+        System.out.println(a);
+        areaLocation tmp = new areaLocation();
+        Float[] coordinates = new Float[2];
+
+        list = dbClient.view("example/by_city")
+                .key(a)
+                .limit(1)
                 .includeDocs(true)
                 .query(areaLocation.class);
 
-        for(int i =0; i < list.size(); i++){
+        for(int i =0; i< list.size(); i++)
             System.out.println(list.get(i).getCity());
-        }
-        Float[] coordinates = new Float[2];
+
+        coordinates[0]=list.get(0).getLatitude();
+        coordinates[1]=list.get(0).getLongitude();
         return coordinates;
     }
 
@@ -78,34 +90,32 @@ public class manageLocations {
     public String findNearestCity(String city){
         Float[] cityCoords = findLocation(city);
 
-        Session session = factory.openSession();
         Transaction tx = null;
         Float[] coordinates = new Float[2];
         String city2name = "none";
         double distance = 1000;
         try{
-            tx = session.beginTransaction();
-            String hql = "SELECT E.city FROM areaLocation E";
-            List cities = session.createQuery(hql).list();
-            Iterator iterator = cities.iterator();
-            while(iterator.hasNext())
-            {
-                String location = (String) iterator.next();
-                city2name = location;
-                double newdistance = findDistance(city, city2name);
-                if(newdistance<distance)
-                    distance=newdistance;
+//            tx = session.beginTransaction();
+//            String hql = "SELECT E.city FROM areaLocation E";
+//            List cities = session.createQuery(hql).list();
+//            Iterator iterator = cities.iterator();
+//            while(iterator.hasNext())
+//            {
+//                String location = (String) iterator.next();
+//                city2name = location;
+//                double newdistance = findDistance(city, city2name);
+//                if(newdistance<distance)
+//                    distance=newdistance;
 
 //                System.out.println(coordinates[0]+" "+coordinates[1]);
-            }
-            tx.commit();
+//            }
+//            tx.commit();
         }catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
-            e.printStackTrace();
+
         }finally {
-            session.close();
+//
         }
 
-        return city2name;
+        return "nothing";
     }
 }

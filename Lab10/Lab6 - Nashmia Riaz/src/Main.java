@@ -16,14 +16,13 @@ public class Main {
 
     public static void main(final String[] args) throws Exception {
         CouchDbClient dbClient = new CouchDbClient("coordinates", true, "http", "127.0.0.1", 5984, "nash","1234");
-
+        manageLocations ml = new manageLocations();
         System.out.print("What would you like to do?\n"+
         "1. Find latitudes and longitudes of a city.\n"+
         "2. Find the distance between 2 cities.\n"+
         "3. Find 5 places near a city.\n");
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
-        manageLocations ml = new manageLocations();
 
 
 //        String csvFile = "src/GeoLiteCity-Location.csv";
@@ -87,9 +86,8 @@ public class Main {
                     System.out.println("Please enter the name of the city.");
                     scanner.nextLine();
                     String city = scanner.nextLine();
-                    System.out.println("CITY "+city);
                     Float[] coordinates = ml.findLocation(city);
-//                    System.out.println("The coordinates of "+city+" are:\nLatitude: "+coordinates[0]+"\nLongitude: "+coordinates[1]);
+                    System.out.println("The coordinates of "+city+" are:\nLatitude: "+coordinates[0]+"\nLongitude: "+coordinates[1]);
                     break;
 
                 case 2:
