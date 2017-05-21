@@ -20,7 +20,7 @@ public class manageLocations {
         dbClient = new CouchDbClient("coordinates", true, "http", "127.0.0.1", 5984, "nash","1234");
         System.out.println("retrieving database...");
         DesignDocument designDoc;
-        designDoc = dbClient.design().getFromDesk("example");
+        designDoc = dbClient.design().getFromDesk("cafe");
         Response response;
         response = dbClient.design().synchronizeWithDb(designDoc);
 //        list = dbClient.view("example/by_all")
